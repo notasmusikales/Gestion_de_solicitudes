@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gestion_solicitud_gestor,gestor.gestion.solicitud,model_gestion_solicitud,base.group_user,1,1,1,1
+access_gestion_categoria_gestor,gestor.gestion.categoria,model_gestion_categoria,base.group_user,1,1,1,1
+access_gestion_prioridad_gestor,gestor.gestion.prioridad,model_gestion_prioridad,base.group_user,1,1,1,1

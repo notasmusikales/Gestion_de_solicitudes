@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <tree string="Solicitudes" decoration-success="state in ('resuelto','cerrado')" decoration-danger="state == 'cancelado'">
-        <field name="name"/>
-        <field name="partner_id"/>
-        <field name="categoria_id"/>
-        <field name="prioridad_id"/>
-        <field name="assigned_to"/>
-        <field name="date_deadline"/>
-        <field name="state"/>
-        <field name="date_created"/>
-    </tree>
+    <record id="view_solicitud_tree" model="ir.ui.view">
+        <field name="name">solicitud.tree</field>
+        <field name="model">gestion.solicitudes.solicitud</field>
+        <field name="arch" type="xml">
+            <tree string="Solicitudes" decoration-success="state in ('resuelto','cerrado')" decoration-danger="state == 'cancelado'">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="categoria_id"/>
+                <field name="prioridad_id"/>
+                <field name="assigned_to"/>
+                <field name="date_deadline"/>
+                <field name="state"/>
+                <field name="date_created"/>
+            </tree>
+        </field>
+    </record>
 </odoo>

@@ -1,28 +1,28 @@
 {
     'name': 'Gestión de Solicitudes',
-    'version': '1.0.0',
-    'category': 'Services',
-    'summary': 'Módulo para gestionar solicitudes internas (IT, RRHH, Compras)',
+    'version': '1.0',
+    'summary': 'Módulo para gestionar solicitudes internas',
     'description': """
-        Módulo personalizado para la gestión de solicitudes internas de la empresa.
-        Permite registrar y dar seguimiento a solicitudes de:
-        - IT: Soporte técnico, Hardware, Software
-        - RRHH: Vacaciones, Permisos, Capacitaciones
-        - Compras: Suministros, Equipos, Servicios
-    """,
-    'author': 'Empresa',
-    'website': '',
-    'license': 'LGPL-3',
-    'depends': ['base'],
+Gestión de solicitudes con categorías, prioridades y asignaciones.
+Incluye vistas en árbol, formulario y kanban, además de menús de configuración.
+""",
+    'author': 'Tu Nombre',
+    'depends': ['base', 'mail'],
     'data': [
+        # Seguridad
         'security/ir.model.access.csv',
+
+        # Datos iniciales (secuencias, etc.)
         'data/secuencia_data.xml',
+
+        # Vistas primero
         'views/solicitud_tree.xml',
         'views/solicitud_form.xml',
         'views/solicitud_kanban.xml',
+
+        # Menús y acciones al final
         'views/solicitud_menu.xml',
-],
-    'demo': [],
+    ],
     'installable': True,
     'application': True,
     'auto_install': False,

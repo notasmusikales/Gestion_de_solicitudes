@@ -17,11 +17,11 @@
     'data': [
         'security/ir.model.access.csv',
         'data/secuencia_data.xml',
-        'views/solicitud_menu.xml',
         'views/solicitud_tree.xml',
         'views/solicitud_form.xml',
         'views/solicitud_kanban.xml',
-    ],
+        'views/solicitud_menu.xml',
+],
     'demo': [],
     'installable': True,
     'application': True,

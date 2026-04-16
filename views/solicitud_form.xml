@@ -1,41 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <form string="Solicitud">
-        <header>
-            <button name="action_asignar" string="Asignar" type="object" class="oe_highlight" invisible="state != 'nuevo'"/>
-            <button name="action_resolver" string="Resolver" type="object" class="oe_highlight" invisible="state != 'en_proceso'"/>
-            <button name="action_cerrar" string="Cerrar" type="object" class="oe_highlight" invisible="state not in ('resuelto','nuevo')"/>
-            <button name="action_cancelar" string="Cancelar" type="object" invisible="state == 'cerrado'"/>
-            <button name="action_reabrir" string="Reabrir" type="object" invisible="state not in ('resuelto','cerrado','cancelado')"/>
-            <field name="state" widget="statusbar" statusbar_visible="nuevo,en_proceso,resuelto,cerrado"/>
-        </header>
-        <sheet>
-            <group>
-                <group>
-                    <field name="name" readonly="1"/>
-                    <field name="partner_id"/>
-                    <field name="categoria_id"/>
-                    <field name="prioridad_id"/>
-                </group>
-                <group>
-                    <field name="assigned_to"/>
-                    <field name="date_deadline"/>
-                    <field name="date_created" readonly="1"/>
-                    <field name="date_resolved" readonly="1"/>
-                </group>
-            </group>
-            <group string="Descripción">
-                <field name="descripcion" nolabel="1"/>
-            </group>
-            <group string="Notas Internas">
-                <field name="note" nolabel="1"/>
-            </group>
-            <group string="Adjuntos">
-                <field name="attachment_ids" widget="many2many_attachment"/>
-            </group>
-        </sheet>
-        <div class="oe_chatter">
-            <field name="message_ids"/>
-        </div>
-    </form>
+    <record id="view_solicitud_form" model="ir.ui.view">
+        <field name="name">solicitud.form</field>
+        <field name="model">gestion.solicitud</field>
+        <field name="arch" type="xml">
+            <form string="Solicitud">
+                <header>
+                    <button name="action_asignar" string="Asignar" type="object" class="oe_highlight" invisible="state != 'nuevo'"/>
+                    <button name="action_resolver" string="Resolver" type="object" class="oe_highlight" invisible="state != 'en_proceso'"/>
+                    <button name="action_cerrar" string="Cerrar" type="object" class="oe_highlight" invisible="state not in ('resuelto','nuevo')"/>
+                    <button name="action_cancelar" string="Cancelar" type="object" invisible="state == 'cerrado'"/>
+                    <button name="action_reabrir" string="Reabrir" type="object" invisible="state not in ('resuelto','cerrado','cancelado')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="nuevo,en_proceso,resuelto,cerrado"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="partner_id"/>
+                            <field name="categoria_id"/>
+                            <field name="prioridad_id"/>
+                        </group>
+                        <group>
+                            <field name="assigned_to"/>
+                            <field name="date_deadline"/>
+                            <field name="date_created" readonly="1"/>
+                            <field name="date_resolved" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Descripción">
+                        <field name="descripcion" nolabel="1"/>
+                    </group>
+                    <group string="Notas Internas">
+                        <field name="note" nolabel="1"/>
+                    </group>
+                    <group string="Adjuntos">
+                        <field name="attachment_ids" widget="many2many_attachment"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
 </odoo>

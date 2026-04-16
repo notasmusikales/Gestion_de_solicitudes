@@ -7,46 +7,4 @@
         <field name="padding">5</field>
         <field name="company_id"></field>
     </record>
-
-    <record id="cat_it" model="gestion.categoria">
-        <field name="name">IT</field>
-        <field name="code">IT</field>
-        <field name="description">Soporte técnico, Hardware, Software</field>
-    </record>
-
-    <record id="cat_rrhh" model="gestion.categoria">
-        <field name="name">RRHH</field>
-        <field name="code">RRHH</field>
-        <field name="description">Vacaciones, Permisos, Capacitaciones</field>
-    </record>
-
-    <record id="cat_compras" model="gestion.categoria">
-        <field name="name">Compras</field>
-        <field name="code">COMPRAS</field>
-        <field name="description">Suministros, Equipos, Servicios</field>
-    </record>
-
-    <record id="prio_baja" model="gestion.prioridad">
-        <field name="name">Baja</field>
-        <field name="code">BAJA</field>
-        <field name="secuencia">1</field>
-    </record>
-
-    <record id="prio_media" model="gestion.prioridad">
-        <field name="name">Media</field>
-        <field name="code">MEDIA</field>
-        <field name="secuencia">2</field>
-    </record>
-
-    <record id="prio_alta" model="gestion.prioridad">
-        <field name="name">Alta</field>
-        <field name="code">ALTA</field>
-        <field name="secuencia">3</field>
-    </record>
-
-    <record id="prio_urgente" model="gestion.prioridad">
-        <field name="name">Urgente</field>
-        <field name="code">URGENTE</field>
-        <field name="secuencia">4</field>
-    </record>
 </odoo>

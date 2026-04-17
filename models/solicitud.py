@@ -28,11 +28,12 @@ class GestionSolicitud(models.Model):
     note = fields.Text(string='Notas Internas')
     attachment_ids = fields.Many2many('ir.attachment', string='Adjuntos')
 
-    @api.model
-    def create(self, vals):
-        if vals.get('name', 'Nuevo') == 'Nuevo':
-            vals['name'] = self.env['ir.sequence'].next_by_code('gestion.solicitud') or 'Nuevo'
-        return super(GestionSolicitud, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get('name', 'Nuevo') == 'Nuevo':
+                vals['name'] = self.env['ir.sequence'].next_by_code('gestion.solicitud') or 'Nuevo'
+        return super(GestionSolicitud, self).create(vals_list)
 
     def action_asignar(self):
         self.write({'state': 'en_proceso'})

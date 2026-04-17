@@ -7,7 +7,7 @@ class GestionSolicitud(models.Model):
     _description = 'Gestión de Solicitudes'
     _order = 'id desc'
 
-    name = fields.Char(string='Número', required=True, copy=False, readonly=True)
+    name = fields.Char(string="Número", readonly=True, default='Nuevo', copy=False)
     partner_id = fields.Many2one('res.partner', string='Solicitante', required=True)
     categoria_id = fields.Many2one('gestion.categoria', string='Categoría', required=True)
     prioridad_id = fields.Many2one('gestion.prioridad', string='Prioridad', required=True)
@@ -27,10 +27,10 @@ class GestionSolicitud(models.Model):
     attachment_ids = fields.Many2many('ir.attachment', string='Adjuntos')
 
     @api.model
-    def create(self, vals):
-        if not vals.get('name') or vals.get('name') == '/':
-            vals['name'] = self.env['ir.sequence'].next_by_code('gestion.solicitud') or '/'
-        return super().create(vals)
+def create(self, vals):
+    if vals.get('name', 'Nuevo') == 'Nuevo':
+        vals['name'] = self.env['ir.sequence'].next_by_code('gestion.solicitud') or 'Nuevo'
+    return super(GestionSolicitud, self).create(vals)
 
     def action_asignar(self):
         self.write({'state': 'en_proceso'})

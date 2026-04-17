@@ -16,7 +16,7 @@ Incluye vistas en árbol, formulario y kanban, además de menús de configuraci�
         'data/secuencia_data.xml',
 
         # Vistas primero
-        'views/solicitud_tree.xml',
+        'views/solicitud_list.xml',
         'views/solicitud_form.xml',
         'views/solicitud_kanban.xml',
 

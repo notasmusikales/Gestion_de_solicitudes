@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_solicitud_tree" model="ir.ui.view">
-        <field name="name">solicitud.tree</field>
+    <record id="view_solicitud_list" model="ir.ui.view">
+        <field name="name">solicitud.list</field>
         <field name="model">gestion.solicitud</field>
         <field name="arch" type="xml">
-            <tree string="Solicitudes" decoration-success="state in ('resuelto','cerrado')" decoration-danger="state == 'cancelado'">
+            <list string="Solicitudes" decoration-success="state in ('resuelto','cerrado')" decoration-danger="state == 'cancelado'">
                 <field name="name"/>
                 <field name="partner_id"/>
                 <field name="categoria_id"/>
@@ -13,7 +13,7 @@
                 <field name="date_deadline"/>
                 <field name="state"/>
                 <field name="date_created"/>
-            </tree>
+            </list>
         </field>
     </record>
 </odoo>

@@ -38,9 +38,6 @@
                         <field name="attachment_ids" widget="many2many_attachment"/>
                     </group>
                 </sheet>
-                <div class="oe_chatter">
-                    <field name="message_ids"/>
-                </div>
             </form>
         </field>
     </record>

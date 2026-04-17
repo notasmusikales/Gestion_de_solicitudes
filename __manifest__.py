@@ -6,7 +6,7 @@
 Gestión de solicitudes con categorías, prioridades y asignaciones.
 Incluye vistas en árbol, formulario y kanban, además de menús de configuración.
 """,
-    'author': 'Tu Nombre',
+    'author': 'Noel Gonzalez Febles',
     'depends': ['base', 'mail'],
     'data': [
         # Seguridad

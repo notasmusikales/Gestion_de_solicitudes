@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_solicitud_list" model="ir.ui.view">
+        <field name="name">solicitud.list</field>
+        <field name="model">gestion.solicitud</field>
+        <field name="arch" type="xml">
+            <list string="Solicitudes" decoration-success="state in ('resuelto','cerrado')" decoration-danger="state == 'cancelado'">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="categoria_id"/>
+                <field name="prioridad_id"/>
+                <field name="assigned_to"/>
+                <field name="date_deadline"/>
+                <field name="state"/>
+                <field name="date_created"/>
+            </list>
+        </field>
+    </record>
+</odoo>

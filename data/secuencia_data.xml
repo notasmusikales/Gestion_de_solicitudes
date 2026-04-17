@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="seq_gestion_solicitud" model="ir.sequence">
         <field name="name">Secuencia de Solicitudes</field>
         <field name="code">gestion.solicitud</field>
         <field name="prefix">SOL-</field>
         <field name="padding">5</field>
-        <field name="company_id"></field>
+        <!-- OPCIONAL: asignar compañía -->
+        <!-- <field name="company_id" ref="base.main_company"/> -->
     </record>
 
     <record id="cat_it" model="gestion.categoria">
@@ -49,4 +51,5 @@
         <field name="code">URGENTE</field>
         <field name="secuencia">4</field>
     </record>
+
 </odoo>
